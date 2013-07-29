@@ -1,0 +1,56 @@
+{var $robots = noindex}
+
+{block #content}
+
+<h2 n:block="title">Nastavení</h2>
+
+<h3>Změna hesla:</h3>
+
+{form changePassword}
+
+    {control $form errors}
+
+    
+        {label old_password /}
+        {input old_password}
+        <br/>
+    
+        {label new_password1 /}
+        {input new_password1}
+        <br/>
+        {label new_password2 /}
+        {input new_password2}
+        <br/>
+        {input send}
+    
+
+{/form}
+<br/><br/>
+<h3>Změna emailu:</h3>
+
+{form changeEmail}
+
+    {control $form errors}
+
+    
+        {label old_email /}
+        {input old_email}
+        <br/>
+    
+        {label new_email1 /}
+        {input new_email1}
+        <br/>
+        {label new_email2 /}
+        {input new_email2}
+        <br/>
+        {input send}
+
+{/form}
+
+<br/><br/>
+
+
+<a href="{link List:}" > Zpět na výpis vozidel </a> <br/>
+
+<a href="{link Homepage:}" > Zpět na seznam hlášení </a><br/>
+

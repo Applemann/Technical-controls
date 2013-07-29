@@ -1,0 +1,29 @@
+{var $robots = noindex}
+
+{block #content}
+
+<h2 n:block="title">Přihlášení</h2>
+
+<p>Přihlaste se jako <i>admin</i>, heslo je <i>nette</i>.
+
+{form signInForm}
+<div class="sign-in-form">
+    {control $form errors}
+
+    <div class="pair">
+        {label username /}
+        <div class="input">{input username}</div>
+    </div>
+    <div class="pair">
+        {label password /}
+        <div class="input">{input password}</div>
+    </div>
+
+    <div class="pair">
+        <div class="input">{input send}</div>
+    </div>
+</div>
+{/form}
+
+<br/><br/>
+Pokud jste zapomněl heslo, tak si můžete na svůj email <a href="{link Send:mail}"> poslat nové </a>.

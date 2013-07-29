@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+
+    <title>Technické kontroly vozidel</title>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+
+
+$(function() {
+$( "#frmaddVehicle-control_date" ).datepicker( { dateFormat: "yy-mm-dd" } );
+
+});
+
+$(function() {
+$( "#frmchangeVehicle-control_date" ).datepicker({ dateFormat: "yy-mm-dd" });
+});
+</script>
+    
+    {block head}{/block}
+</head> 
+
+<body>
+    
+    <center>
+    <h1>Technické kontroly vozidel</h1>
+    
+    
+    
+    {snippet flashMessages}
+    <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+    {/snippet}
+    <br/>
+    {include #content}
+    </center>
+    
+</body>
+</html>

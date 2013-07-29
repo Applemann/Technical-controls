@@ -1,0 +1,58 @@
+{block content}
+
+<a href="{link Homepage:}" > Hlášení </a>
+<br/>
+<a href="{link Sign:out}" > Odhlášení </a>
+<br/>
+<a href="{link Settings:}" > Nastavení </a>
+<br/><br/>
+
+<center>
+
+{snippet}
+<table border=1 width=900px>
+    <tr> <th>Jméno</th> <th>Značka</th> <th>Datum</th> <th colspan=2>Tlačítka</th> </tr>
+    <tr n:foreach="$listVehicles as $vehicle">
+        {if $vehicle->id == $change}
+            {include #formChange}
+        {else}
+    
+        <td> <center>{$vehicle->name}</center> </td>
+        <td> <center>{$vehicle->license_plate}</center> </td>
+        <td> <center>{$vehicle->control_date|date:'%Y-%m-%d'}</center> </td>
+        <td> <center> <a href="{link List:delete $vehicle->id}"> Odebrat </a> </center> </td>
+        <td> <center> <a href="{link List: $vehicle->id}"> Změnit </a> </center> </td>
+        
+        {/if}
+    </tr>
+    <tr>
+        
+    {include #formAdd}
+    
+    </tr>
+</table>
+{/snippet}
+
+</center>
+{/block}
+
+
+{block formAdd}
+    {form addVehicle}
+        <td> <center>{input name}</center> </td>
+        <td> <center>{input license_plate}</center> </td>
+        <td> <center>{input control_date}</center> </td>
+        <td colspan=2 > <center>{input send}</center> </td>
+    {/form}
+{/block}
+
+{block formChange}
+    {form changeVehicle}
+         <center>{input id}</center> 
+        <td> <center>{input name}</center> </td>
+        <td> <center>{input license_plate}</center> </td>
+        <td> <center>{input control_date}</center> </td>
+        <td colspan=2 > <center>{input send}</center> </td>
+    {/form}
+{/block}
+

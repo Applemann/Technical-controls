@@ -1,0 +1,25 @@
+{block content}
+
+<h2> Důležitá hlášení </h2>
+
+
+    <br/><br/><br/>
+    {if $login}
+        <a href="{link List:}" > Seznam strojů </a> <br/>
+        <a href="{link Settings:}" > Nastavení </a> <br/>
+        <a href="{link Sign:out}" > Odhlášení </a>
+
+    {else}
+        <a href="{link Sign:in}" > Přihlášení </a>
+    {/if}
+    <br/><br/>
+    {foreach $messages as $message}
+        {$message} <br>
+
+    {/foreach}
+    <br/><br/>
+     <a href="http://www.centrum.cz" > OK beru na vědomí </a>
+
+{/block}
+
+
